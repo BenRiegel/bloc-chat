@@ -1,0 +1,32 @@
+html, body{
+  padding: 0;
+  margin: 0;
+}
+
+nav{
+  position:absolute;
+  height: 100%;
+  width: 25%;
+  background-color: #e8e8e8;
+  padding:20px;
+}
+
+nav h1{
+  margin:0;
+  font-size: 24px;
+}
+
+#roomsContainer{
+  margin-top:20px;
+}
+
+.room{
+  display:block;
+  color:#666666;
+  margin-bottom:15px;
+  text-decoration: none;
+}
+
+.room:hover{
+  text-decoration: underline;
+}
