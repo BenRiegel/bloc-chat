@@ -6,17 +6,18 @@ html, body{
 nav{
   position:absolute;
   height: 100%;
-  width: 25%;
+  width: 15%;
   background-color: #e8e8e8;
   padding:20px;
 }
 
 nav h1{
+  display:inline-block;
   margin:0;
   font-size: 24px;
 }
 
-#roomsContainer{
+#rooms-container{
   margin-top:20px;
 }
 
@@ -29,4 +30,28 @@ nav h1{
 
 .room:hover{
   text-decoration: underline;
+}
+
+.new-room-button{
+  position:relative;
+  height:24px;
+  top:-4px;
+  left:10px;
+}
+
+#modal-container{
+  padding:20px;
+}
+
+#modal-title{
+  font-size:24px;
+  margin-bottom:15px;
+}
+
+#modal-prompt{
+  font-size:16px;
+}
+
+#modal-input-text{
+  margin:10px 0 10px 0;
 }

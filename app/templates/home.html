@@ -1,7 +1,12 @@
+<div id="main">
 <nav>
-    <h1>Bloc Chat</h1>
-    <div id="roomsContainer">
-        <a class="room" href="" ng-repeat="room in room.allRooms">Room {{$index + 1}}</a>
+    <div ng-controller='ModalCtrl as modal'>
+        <h1>Bloc Chat</h1>
+        <button class="new-room-button" ng-click="modal.show()">New Room</button>
+    </div>
+    <div id="rooms-container" ng-controller='HomeCtrl as home' >
+        <a class="room" href="" ng-repeat="room in home.allRooms">Room {{$index + 1}}</a>
     </div>
 
 </nav>
+</div>
