@@ -6,26 +6,53 @@ html, body{
 nav{
   position:absolute;
   height: 100%;
-  width: 15%;
+  width: 20%;
   background-color: #e8e8e8;
-  padding:20px;
 }
 
 nav h1{
   display:inline-block;
-  margin:0;
+  margin:20px 20px 0 20px;
   font-size: 24px;
 }
 
-#rooms-container{
-  margin-top:20px;
+section{
+  position:absolute;
+  left:20%;
+  width:80%;
+  height:100%;
 }
+
+#room-name{
+  height:60px;
+  line-height: 60px;
+  padding-left:20px;
+}
+
+
+#messages-container{
+  position:absolute;
+  top:60px;
+  bottom:0;
+  width:100%;
+}
+
+.message{
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+#rooms-container{
+  margin:20px 20px 0 20px;
+}
+
 
 .room{
   display:block;
   color:#666666;
   margin-bottom:15px;
   text-decoration: none;
+  cursor:pointer;
 }
 
 .room:hover{

@@ -1,12 +1,15 @@
-<div id="main">
 <nav>
     <div ng-controller='ModalCtrl as modal'>
         <h1>Bloc Chat</h1>
         <button class="new-room-button" ng-click="modal.show()">New Room</button>
     </div>
-    <div id="rooms-container" ng-controller='HomeCtrl as home' >
-        <a class="room" href="" ng-repeat="room in home.allRooms">Room {{$index + 1}}</a>
+    <div id="rooms-container" ng-controller='HomeCtrl as home'>
+        <a class="room" ng-click="home.selectRoom($event)" data-id="{{room.$id}}" ng-repeat="room in home.allRooms">{{room.$value}}</a>
     </div>
-
 </nav>
-</div>
+<section ng-controller='HomeCtrl as home'>
+    <div id="room-name">{{home.activeRoomName}}</div>
+    <div id="messages-container">
+        <div class="message" ng-repeat="message in home.allMessages">{{message.content}}</div>
+    </div>
+</section>
