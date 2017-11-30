@@ -1,5 +1,5 @@
 (function() {
-    function HomeCtrl(Room, Message) {
+    function HomeCtrl(Room, Message, $cookies) {
         this.allRooms = Room.all;
 
         this.activeRoom = null;
@@ -9,9 +9,23 @@
             this.activeRoom = room;
             this.allMessages = Message.getByRoomId(room.$id);
         }
+
+        this.sendMessage = function(){
+            var timeStamp = new Date();
+            var messageInputText = document.getElementById("message-input-text");
+            var messageObj = {
+              content: messageInputText.value,
+              roomId: this.activeRoom.$id,
+              username: $cookies.get('blocChatCurrentUser'),
+              sentAt: timeStamp.toDateString() + " " + timeStamp.toLocaleTimeString()
+            }
+            Message.send(messageObj);
+            messageInputText.value = "";
+            messageInputText.focus();
+        }
     }
 
     angular
         .module('blocChat')
-        .controller('HomeCtrl', ['Room', 'Message', HomeCtrl]);
+        .controller('HomeCtrl', ['Room', 'Message', '$cookies', HomeCtrl]);
 })();

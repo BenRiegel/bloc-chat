@@ -18,4 +18,8 @@
             <div class="message-content">{{message.content}}</div>
         </div>
     </div>
+    <div id="message-input-container" ng-show="home.activeRoom">
+        <input id="message-input-text" type="text" placeholder="Type Your Message Here">
+        <button id="message-send-button" ng-click="home.sendMessage()">Send</button>
+    </div>
 </section>
