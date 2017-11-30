@@ -3,7 +3,7 @@
 
         this.show = function(){
             var modalInstance = $uibModal.open({
-                templateUrl: '/templates/modal.html',
+                templateUrl: '/templates/room_modal.html',
                 controller: 'NewRoomModalCtrl as newRoomModal',
             });
         }

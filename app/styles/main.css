@@ -94,6 +94,15 @@ section{
   margin:10px 0 10px 0;
 }
 
+#modal-error-message{
+  margin-left:10px;
+  color:red;
+}
+
+.hidden{
+  visibility: hidden;
+}
+
 .clearfix::after {
    content: ".";
    visibility: hidden;
