@@ -3,13 +3,19 @@
         <h1>Bloc Chat</h1>
         <button class="new-room-button" ng-click="modal.show()">New Room</button>
     </div>
-    <div id="rooms-container" ng-controller='HomeCtrl as home'>
-        <a class="room" ng-click="home.selectRoom($event)" data-id="{{room.$id}}" ng-repeat="room in home.allRooms">{{room.$value}}</a>
+    <div id="rooms-container">
+        <a class="room" ng-click="home.selectRoom(room)" ng-repeat="room in home.allRooms">{{room.$value}}</a>
     </div>
 </nav>
-<section ng-controller='HomeCtrl as home'>
-    <div id="room-name">{{home.activeRoomName}}</div>
+<section>
+    <div id="room-name">{{home.activeRoom.$value}}</div>
     <div id="messages-container">
-        <div class="message" ng-repeat="message in home.allMessages">{{message.content}}</div>
+        <div class="message" ng-repeat="message in home.allMessages">
+            <div class="message-metadata clearfix">
+                <div class="message-username">{{message.username}}</div>
+                <div class="message-time">{{message.sentAt}}</div>
+            </div>
+            <div class="message-content">{{message.content}}</div>
+        </div>
     </div>
 </section>
