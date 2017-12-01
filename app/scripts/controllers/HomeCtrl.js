@@ -12,16 +12,14 @@
 
         this.sendMessage = function(){
             var timeStamp = new Date();
-            var messageInputText = document.getElementById("message-input-text");
             var messageObj = {
-              content: messageInputText.value,
+              content: this.messageText,
               roomId: this.activeRoom.$id,
               username: $cookies.get('blocChatCurrentUser'),
               sentAt: timeStamp.toDateString() + " " + timeStamp.toLocaleTimeString()
             }
             Message.send(messageObj);
-            messageInputText.value = "";
-            messageInputText.focus();
+            this.messageText="";
         }
     }
 

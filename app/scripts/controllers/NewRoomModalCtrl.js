@@ -5,8 +5,7 @@
          }
 
          this.addRoom = function(){
-             var roomName = document.getElementById("modal-input-text").value;
-             Room.add(roomName);
+             Room.add(this.roomname);
              $uibModalInstance.close();
          }
      }
